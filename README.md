@@ -28,9 +28,11 @@ V součas
 
 ## 4. Instalace
 
-V současné fázi aplikace nepočítá s instalací na vícero serverech. Postup pro případnou instalaci je však následující. Instalaci aplikace provedete rozbalením adresáře z gitu do kořenového adresáře webového prostoru. V adresáři *install* pak naleznete skripty v DDL, které importujete do databáze:
+Aplikaci rozbalíte z adresáře z gitu do kořenového adresáře webového prostoru. V adresáři *install* pak naleznete skripty v DDL, které importujete do databáze:
     * db-structure.sql
     * db-sample-data.sql
+
+V současné fázi aplikace nepočítá s instalací na vícero serverech. 
 
 ## 5. Uživatelská příručka
 
@@ -38,14 +40,14 @@ Uživatelskou příručku naleznete [zde](https://itesty.mjvbarton.cz)
 
 ## 6. Souhrn použití aplikace
 
-Při analýze problému jsem definoval 5 skupin uživatelů: *návštěvníka stránky*, *studenta*, *učitele*, *správce školy* a *superuživatele*. Pro potřeby této verze budou implementovány pouze první dvě skupiny.
+Při analýze úlohy jsem definoval 5 skupin uživatelů: *Guest (návštěvník stránky)*, *User (student)*, *učitele*, *správce školy* a *superuživatele*. Pro potřeby této verze budou implementovány pouze první dvě skupiny.
 
-### Guest (návštěvník stránky)
+### Guest
 
 Host stránek, který se může přihlásit do systému (UC001). Může číst nápovědu (UC002).
 
 
-### User (student)
+### User
 
 Přihlášený uživatel, který si může vygenerovat nový test tím, že vybere tématický okruh testu (UC101). Poté nastaví jeho další parametry (UC102) Poté co uživatel odešle test k vyplnění je test vyhodnocen, uložen do databáze (UC103) a následně zobrazen uživateli (UC104). Uživatel si také může zobrazit historii již vygenerovaných testů (UC105) a zobrazit si je (UC104) nebo v případě, že je test nevyplní i vyplnit (UC102). Uživatel také může přidávat do databáze vlastní testové otázky (UC106). Může si také zobrazit svůj profil (UC107) a změnit heslo (UC108). Uživatel se může odhlásit (UC109)
 
@@ -80,7 +82,11 @@ Na základě url je uživateli zobrazen již vyplněný test. Pokud test neexist
 
 ### UC105 Zobrazení napsaných testů
 
+Po kliknutí na nabídku *Napsané testy* se uživateli zobrazí tabulka všech napsaných testů. V tabulce je možné vyhledávat testy podle tématického okruhu pomocí fulltextového pole. V tomto poli lze použít našeptávač, který je obsluhován AJAXem. V tabulce je také možné filtrovat testy. Kliknutím na tlačítko *Vyplnit* nebo *Zobrazit* přejde uživatel k vyplnění nebo zobrazení již vygenerovaného testu.
+
 ### UC106 Přidání testové otázky
+
+
 
 ### UC107 Uživatelský profil
 
