@@ -153,6 +153,10 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
         
 ```
 
+### Databáze
+
+![alt text](https://imgur.com/a/Q4VRDDs "Schéma databáze")
+
 ## 11. Zabezpečení
 
 ## 12. Zpracování dat
