@@ -155,7 +155,7 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 
 ### Databáze
 
-![alt text](https://i.imgur.com/8CS76Il.png "Schéma databáze")
+![alt text](https://i.imgur.com/QmEvmxm.png "Schéma databáze")
 
 ## 11. Zabezpečení
 
