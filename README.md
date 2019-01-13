@@ -28,7 +28,7 @@ V součas
 
 ## 4. Instalace
 
-V současné fázi aplikace nepočítá s instalací na vícero serverech. Postup pro případnou instalaci je však následující. Instalaci aplikace provedete rozbalením adresáře z gitu do kořenového adresáře webového prostoru. V adresáři install pak naleznete skripty v DDL, které importujete do databáze:
+V současné fázi aplikace nepočítá s instalací na vícero serverech. Postup pro případnou instalaci je však následující. Instalaci aplikace provedete rozbalením adresáře z gitu do kořenového adresáře webového prostoru. V adresáři *install* pak naleznete skripty v DDL, které importujete do databáze:
     * db-structure.sql
     * db-sample-data.sql
 
@@ -109,6 +109,49 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 ### W07 Front controller
 
 ## 10. Úložiště
+
+### Adresářová struktura
+
+```
+.
+|
++-- /assets                     ** Serverová strana aplikace
+|       +-- /control                    ** Action controllers
+|       |       +-- /api                    
+|       |       +-- /question               ** Akce pro práci s otázkami (volané z question.php)
+|       |       +-- /test                   ** Akce pro práci s testy (volané z test.php)
+|       |       +
+|       +-- /extlib                     ** Externí knihovny
+|       |       +-- /Parsedown
+|       |       +
+|       +-- /lib                        ** Vlastní knihovny
+|       +-- /models                     ** Modely (MVC)
+|       +-- /views                      ** View (MVC)
+|       |       +-- /itest                  ** Rendering testů
+|       |       +-- /menu                   ** Rendering uživatelských nabídek
+|       |       +-- /misc                   ** Pomocné renderovací knihovny
+|       |       +-- /static                 ** Statický obsah stránek
+|       |       +-- /user                   ** Rendering akcí s uživatelem
+|       +       +
++-- /install                    ** Instalační skripty pro databázi
+|       +
++-- /resources                  ** Zdrojové materiály pro klientskou stranu
+|       +-- /css
+|       +-- /img
+|       |       +-- /help                   ** Obrázky v nápovědě
+|       |       +-- /profiles               ** Profilové fotky (v beta verzi pouze jedna defaultní)
+|       |       +
+|       +-- /js
+|       |       +-- /ajax                   ** Knihovny pro ajax
+|       |       +-- /control                ** Ovládací skript pro každý view (MVC)
+|       |       +-- /misc                   ** Různé javascriptové knihovny
+|       |       +
+|       +-- /md                         ** Statický textový obsah stránek
+|       |       +-- /help                   
+|       +
++
+        
+```
 
 ## 11. Zabezpečení
 
