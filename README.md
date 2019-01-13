@@ -55,26 +55,26 @@ Přihlášený uživatel, který si může vygenerovat nový test tím, že vybe
 
 ### UC001 Přihlášení do systému
 
-*Guest* si zobrazí hlavní stránku pro návštěvníky (V01). Do přihlašovacího formuláře v horní části stránky zadá email, pod kterým je registrovaný v systému a své heslo. Kliknutím na tlačítko přihlášení dojde nejprve k validaci formuláře - je ověřeno, zda uživatel vyplnil email a heslo a zda data splňují maximální dělku datového typu v databázi. Validace probíhá nejdřív v klinetském prostředí v Javascriptu a poté jsou data odeslána na server, kde jsou opět zvalidována.
-Pokud jsou data validní je *Guest* přihlášen do systému a stává se *Userem*. Po přihlášení je přesměrován na stránku pro generování testu. (V11)
+*Guest* si zobrazí hlavní stránku pro návštěvníky. Do přihlašovacího formuláře v horní části stránky zadá email, pod kterým je registrovaný v systému a své heslo. Kliknutím na tlačítko přihlášení dojde nejprve k validaci formuláře - je ověřeno, zda uživatel vyplnil email a heslo a zda data splňují maximální dělku datového typu v databázi. Validace probíhá nejdřív v klinetském prostředí v Javascriptu a poté jsou data odeslána na server, kde jsou opět zvalidována.
+Pokud jsou data validní je *Guest* přihlášen do systému a stává se *Userem*. Po přihlášení je přesměrován na stránku pro generování testu.
 
 ### UC002 Zobrazení nápovědy
 
-Po kliknutí na tlačítko nápovědy se první stránka nápovědy na (V02). Pomocí postranního menu nebo na základě url je uživateli vykreslen soubor s daným obsahem nápovědy. Soubory jsou uloženy ve formátu Markdown a jsou převáděny pomocí externí knihovny *Parsedown* do HTML.
+Po kliknutí na tlačítko nápovědy se první stránka nápovědy na. Pomocí postranního menu nebo na základě url je uživateli vykreslen soubor s daným obsahem nápovědy. Soubory jsou uloženy ve formátu Markdown a jsou převáděny pomocí externí knihovny *Parsedown* do HTML.
 
 ### UC101 Generování testu
 
-Na začátku je uživateli zobrazena obrazovka pro výbět tématu (V11). Uživatel si nejprve vybere předmět z menu v levém postranním panelu. Následně je uživateli v tabulce zobrazen seznam dostupných tematických okruhů. Hledaná témata může uživatel vyhledávat pomocí filtru nad tabulkou. Ten je ovládán pomocí tlačítek *Vyhledat* a *Filtr*. Kliknutí na tyto tlačítka vyvolá odeslání vyhledávacího formuláře, který překreslí stránku. V poli pro fulltextové vyhledávání je použit našeptávač, který je obsluhován pomocí AJAXem.
+Na začátku je uživateli zobrazena obrazovka pro výbět tématu. Uživatel si nejprve vybere předmět z menu v levém postranním panelu. Následně je uživateli v tabulce zobrazen seznam dostupných tematických okruhů. Hledaná témata může uživatel vyhledávat pomocí filtru nad tabulkou. Ten je ovládán pomocí tlačítek *Vyhledat* a *Filtr*. Kliknutí na tyto tlačítka vyvolá odeslání vyhledávacího formuláře, který překreslí stránku. V poli pro fulltextové vyhledávání je použit našeptávač, který je obsluhován pomocí AJAXem.
 
 Výběr tématu provede uživatel zašktrnutím příslušného tématu a kliknutím na tlačítko pokračovat. Pokud téma obsahuje menší počet otázek než 5, nelze vybrat. V případě, že uživatel, žádná pole nezašktrl zobrazí se mu chybová hláška v podobě statusboxu pod titulkem stránky.
 
 ### UC102 Nastavení parametrů testu
 
-Toto užití se aktivuje po přijetí formuláře z UC101. Uživateli zobrazena obrazovka (V12) s dalšími parametry testu. V této verzi je to pouze počet otázek, který je tvořen *dropdownem*, který zobrazí hodnotu 5 a pak všechna čísla dělitelná 10, která jsou menší než je počet ptázek a která nejsou větší než 50. Po kliknutí na tlačítko odeslat se vygeneruje nový test.
+Toto užití se aktivuje po přijetí formuláře z UC101. Uživateli zobrazena obrazovka s dalšími parametry testu. V této verzi je to pouze počet otázek, který je tvořen *dropdownem*, který zobrazí hodnotu 5 a pak všechna čísla dělitelná 10, která jsou menší než je počet ptázek a která nejsou větší než 50. Po kliknutí na tlačítko odeslat se vygeneruje nový test.
 
 ### UC103 Vyplnění testu
 
-Na základě url je uživateli zobrazen nevyplněný test, který je tvořen otázkami (V13). Pokud uživatel klikne na tlačítko *Opustit test* odejde z testu na zpět na UC101. Test zůstává stále uložen v databázi a jeví se jako nevyplněný. Pokud uživatel klikne na tlačítko *Vyhodnotit* je uživateli dialog, který se uživatele ptá, zda si zkontroloval odpovědi. V případě, že uživatel klikne na tlačítko *Ne* může pokračovat vyplňování, v opačném případě jsou data z testu odeslána k validaci na server. Na serveru je ověřeno, jsou odpovědi zformátovány (jsou ořezány mezery v řetězcích) a jsou přiřazeny k otázkám. Poté jsou otázky předány v vyhodnocení testu. Po vyhodnocení je uživatel přesměrován na UC104.
+Na základě url je uživateli zobrazen nevyplněný test, který je tvořen otázkami. Pokud uživatel klikne na tlačítko *Opustit test* odejde z testu na zpět na UC101. Test zůstává stále uložen v databázi a jeví se jako nevyplněný. Pokud uživatel klikne na tlačítko *Vyhodnotit* je uživateli dialog, který se uživatele ptá, zda si zkontroloval odpovědi. V případě, že uživatel klikne na tlačítko *Ne* může pokračovat vyplňování, v opačném případě jsou data z testu odeslána k validaci na server. Na serveru je ověřeno, jsou odpovědi zformátovány (jsou ořezány mezery v řetězcích) a jsou přiřazeny k otázkám. Poté jsou otázky předány v vyhodnocení testu. Po vyhodnocení je uživatel přesměrován na UC104.
 
 ### UC104 Zobrazení vyplněného testu
 
@@ -86,13 +86,19 @@ Po kliknutí na nabídku *Napsané testy* se uživateli zobrazí tabulka všech 
 
 ### UC106 Přidání testové otázky
 
-
+Po kliknutí na položku nabídky *Vytvořit otázky* se uživateli zobrazí obrazovka s přidáním nových otázek. Uživatel vyplní nejprve pole pro výběr předmětu a tématického okruhu vkládané otázky. Obě pole mají našeptávač a jejich validace je prováděna přes AJAX. Uživatel poté vyplní hlavičku otázky a volitelně popis otázky. Poté uživatel zvolí z dropdown-menu, zda bude zadávat otázku s texotvým polem nebo otázku s přepínači. Poté je formulář zvalidován a otázka přidána do databáze.
 
 ### UC107 Uživatelský profil
 
+Po kliknutí na položku nabídky *Můj profil* se uživateli zobrazí informace o jeho profilu. V současné verzi jsou to pouze jméno a příjmení uživatele, email, pod kterým je uživatel evidován a datum, kdy byl uživatel přidán do databáze. Pod uživatelským profilem je tlačítko, které umožňuje změnu hesla.
+
 ### UC108 Změna hesla
 
+Změnu hesla provede uživatel nejprve vyplněním svého stávajícího hesla do textového pole. Poté zadá do textového pole nové heslo a do dalšího textového pole své nové heslo zopakuje. Po odeslání formuláře je ověřeno stávající heslo a následně uloženo heslo nové.
+
 ### UC109 Odhlášení
+
+Po kliknutí na tlačítko odhlásit je uživatel odhlášen ze systému a přesměrován na úvodní stránku.
 
 ## 8. Uživatelské rozhraní
 
@@ -165,14 +171,14 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 
 ## 11. Zabezpečení
 
+Aplikace je zabezpečena proti XSS. Pro přístup k databázi využívá knihovnu PDO. Aplikace komunikuje s klientem přes protokol https.
+
 ## 12. Zpracování dat
 
-## 13. Databáze
+## 13. Požadavky mimo rozsah projektu
 
-## 14. Požadavky mimo rozsah projektu
+## 14. Nefunkční požadavky
 
-## 15. Nefunkční požadavky
-
-## 16. Zajímavosti v kódu
+## 15. Zajímavosti v kódu
 
         
