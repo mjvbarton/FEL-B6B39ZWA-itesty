@@ -167,4 +167,6 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 
 ## 15. Nefunkční požadavky
 
+## 16. Zajímavosti v kódu
+
         
