@@ -175,10 +175,50 @@ Aplikace je zabezpečena proti XSS. Pro přístup k databázi využívá knihovn
 
 ## 12. Zpracování dat
 
+Data jsou zpracována pomocí modelů a jsou reprezentována v instancích tříd modelů. Každá třída zároveň obsahuje své specifické metody pro práci s daty.
+
 ## 13. Požadavky mimo rozsah projektu
+
+Při vývoje aplikace mě napadly funkcionality, které bych rád realizoval v následujících verzích aplikace:
+    * více skupin uživatelů [viz 6.](docs/README#L41)
+    * systém pro evidenci špatně zadaných otázek
+    * systém pro vytváření ověřených otázek vyučujícími
+    * zavedení nové entity *škola*, která umožní provozovat itesty jako webový portál
+    * administrátorská část aplikace pro správu uživatelů
+    * registrační formulář pro uživatele
 
 ## 14. Nefunkční požadavky
 
+### Zálohování
+
+Zálohování zajišťuje webhosting.
+
+### Platforma
+
+Aplikace je vyvíjena primárně pro uživatele desktopových počítačů s prohlížeči Chrome nebo Firefox.
+
+### Logování
+
+V této verzi aplikace nebylo zvažováno logování.
+
+### Chybové stavy
+
+Chybové stavy jsou řešeny výpisem chybové hlášky do uživatelského rozhraní. V případě kritického chybového stavu (selhání sql dotazu), je uživateli zobrazena chybová stránka.
+
+## 15. Vývojové a produkční prostředí
+
+Pro účely vývoje aplikace bylo použito prostředí XAMPP. Po uplynutí zkouškového období bude aplikace nasazena do testovacího provozu mezi studenty Pražské konzervatoře.
+
+V případě ostrého provozu bude dobré zvážit vytvoření separátního serveru pro účely testování.
+
 ## 15. Zajímavosti v kódu
 
+Pro účely hodnocení semestrální práce jsem zařadil na závěr tuto kategorii.
+
+### Zajímavost v Javascriptu
+
+Nerealizována
+
+### Zajímavost v CSS
+* Animace
         
