@@ -193,6 +193,8 @@ graph TD;
 
 Tabulky **institutions** a **groups** jsou zde připraveny pro další rozšiřování aplikace.
 
+Přístup k databázi je realizován pommocí PDO. Nastavení credentials se provádí v souboru */assets/lib/_dbconfig.php*.
+
 ## 11. Zabezpečení
 
 Aplikace je zabezpečena proti XSS. Pro přístup k databázi využívá knihovnu PDO. Aplikace komunikuje s klientem přes protokol https.
