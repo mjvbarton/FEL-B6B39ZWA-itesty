@@ -90,13 +90,9 @@ Po kliknutí na položku nabídky *Vytvořit otázky* se uživateli zobrazí obr
 
 ### UC107 Uživatelský profil
 
-Po kliknutí na položku nabídky *Můj profil* se uživateli zobrazí informace o jeho profilu. V současné verzi jsou to pouze jméno a příjmení uživatele, email, pod kterým je uživatel evidován a datum, kdy byl uživatel přidán do databáze. Pod uživatelským profilem je tlačítko, které umožňuje změnu hesla.
+Po kliknutí na položku nabídky *Můj profil* se uživateli zobrazí informace o jeho profilu. V současné verzi jsou to pouze jméno a příjmení uživatele, email, pod kterým je uživatel evidován a datum, kdy byl uživatel přidán do databáze.
 
-### UC108 Změna hesla
-
-Změnu hesla provede uživatel nejprve vyplněním svého stávajícího hesla do textového pole. Poté zadá do textového pole nové heslo a do dalšího textového pole své nové heslo zopakuje. Po odeslání formuláře je ověřeno stávající heslo a následně uloženo heslo nové.
-
-### UC109 Odhlášení
+### UC108 Odhlášení
 
 Po kliknutí na tlačítko odhlásit je uživatel odhlášen ze systému a přesměrován na úvodní stránku.
 
@@ -122,15 +118,11 @@ Zobrazení, uchovávání a vyhodnocení testu je realizováno instancemi iTest,
 
 Funkce vkládání otázek je prováděna procedurálně funkcí insertQuestion. Která na základě zadaných parametrů vloží otázku do databáze. K otázce je vždy vkládán uživatelský identifikátor pro případné řešení problémů.
 
-### W05 Změna hesla
-
-Změna hesla je realizována instancí třídy User. Ta pomocí instance třídy Login nejprve ověří správnost původního hesla. Poté instance User pomocí vlastních metod nastaví nové heslo.
-
-### W06 Validace formulářových polí na serveru
+### W05 Validace formulářových polí na serveru
 
 Validace formulářového pole je realizována pomocí instance třídy Formfield. Ta na svém vstupu přijímá parametry jako je maximální délka, název pole, to jestli je pole vyžadované atd. Při výpisu dat je možné zvolit režim escapování html tagů (výchozí nastavení) nebo toto nastavení vypnout. Třída zároveň obsahuje výchozí chybové hlášky, které je možné zobrazit pomocí view. Zároveň třída podporuje vnější validaci formulářového pole (např. při loginu).
 
-### W07 Front controller
+### W06 Front controller
 
 Celá architektura webu je řešena pomocí Front controlleru. Action controllery jsou umístěny v adresáři /assets/control. V případě, že jsou funkce action controlleru složitější, tak jsou umístěny ve složce se stejným názvem jako je název action controlleru. Modely jsou tvořeny třídami výše jmenovaných modulů. Views jsou rozděleny do adresářů podle pole působnosti. Zároveň podporují částečný composite view.
 
@@ -216,6 +208,7 @@ Při vývoje aplikace mě napadly funkcionality, které bych rád realizoval v n
     * zavedení nové entity *škola*, která umožní provozovat itesty jako webový portál
     * administrátorská část aplikace pro správu uživatelů
     * registrační formulář pro uživatele
+    * změna hesla stávajícího uživatele
 
 ## 15. Nefunkční požadavky
 
