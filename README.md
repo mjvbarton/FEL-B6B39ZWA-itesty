@@ -24,7 +24,7 @@ Vytvořte beta verzi webové aplikace pro podporu výuky studentů. Aplikace bud
 
 ## 3. Umístění aplikace
 
-V součas
+Aplikace je umístěna na adrese [itesty.mjvbarton.cz](https://itesty.mjvbarton.cz)
 
 ## 4. Instalace
 
@@ -182,6 +182,16 @@ Celá architektura webu je řešena pomocí Front controlleru. Action controller
 ### Databáze
 
 ![alt text](https://i.imgur.com/QmEvmxm.png "Schéma databáze")
+
+Tabulky v databázi mají hierarchické uspořádání.
+``` mermaid
+graph TD;
+    Institution*-->Subject;
+    Subject-->Topic;
+    Topic-->Test;
+```
+
+Tabulky **institutions** a **groups** jsou zde připraveny pro další rozšiřování aplikace.
 
 ## 11. Zabezpečení
 
