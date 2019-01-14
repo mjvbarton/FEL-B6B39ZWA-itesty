@@ -108,17 +108,31 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 
 ### W01 Přihlášení
 
+Přihlášení je realizováno instancí třídy Login. Nejprve je ověřeno, zda se uživatelský email nachází v databázi, poté je ověřeno heslo. K šifrování hesel a k jejich ověřování se používají výchozí funkce **password_hash()** a **password_verify()**
+
 ### W02 Generování testu
+
+Generování testu je realizováno instancí třídy iTestGenerator. Ta na základě zadaného tématického okruhu vybere otázky z databáze a z nich náhodně vybere n otázek, které uživatel zadá na vstupu. Poté instance vloží do databáze nový test a tyto vybrané otázky k němu přiřadí.
 
 ### W03 Vyhodnocení testu
 
+Zobrazení, uchovávání a vyhodnocení testu je realizováno instancemi iTest, Question a Answer. Instance iTest nejprve načte otázky z databáze a poté je vyhodnotí. Vyhodnocení probíhá na základě porovnání řetězce (v případě textové otázky), v případě otázky s přepínači probíhá vyhodnocení na základě pořadového čísla odpovědi. Instance Question jsou obsluhovány přes spojovový seznam, který je reprezentován instancí QuestionQueue.
+
 ### W04 Uložení testové otázky do databáze
+
+Funkce vkládání otázek je prováděna procedurálně funkcí insertQuestion. Která na základě zadaných parametrů vloží otázku do databáze. K otázce je vždy vkládán uživatelský identifikátor pro případné řešení problémů.
 
 ### W05 Změna hesla
 
+Změna hesla je realizována instancí třídy User. Ta pomocí instance třídy Login nejprve ověří správnost původního hesla. Poté instance User pomocí vlastních metod nastaví nové heslo.
+
 ### W06 Validace formulářových polí na serveru
 
+Validace formulářového pole je realizována pomocí instance třídy Formfield. Ta na svém vstupu přijímá parametry jako je maximální délka, název pole, to jestli je pole vyžadované atd. Při výpisu dat je možné zvolit režim escapování html tagů (výchozí nastavení) nebo toto nastavení vypnout. Třída zároveň obsahuje výchozí chybové hlášky, které je možné zobrazit pomocí view. Zároveň třída podporuje vnější validaci formulářového pole (např. při loginu).
+
 ### W07 Front controller
+
+Celá architektura webu je řešena pomocí Front controlleru. Action controllery jsou umístěny v adresáři /assets/control. V případě, že jsou funkce action controlleru složitější, tak jsou umístěny ve složce se stejným názvem jako je název action controlleru. Modely jsou tvořeny třídami výše jmenovaných modulů. Views jsou rozděleny do adresářů podle pole působnosti. Zároveň podporují částečný composite view.
 
 ## 10. Úložiště
 
@@ -173,11 +187,15 @@ Uživatelské rozhraní je detailně popsáno v nápovědě.
 
 Aplikace je zabezpečena proti XSS. Pro přístup k databázi využívá knihovnu PDO. Aplikace komunikuje s klientem přes protokol https.
 
-## 12. Zpracování dat
+## 12. Nastavení webserveru
+
+Pro potřeby realizace front controlleru a https je upravno nastavení serveru pomocí .htaccess modulem rewrite. Přístup do adresářů assets a install je pro klienta omezen.
+
+## 13. Zpracování dat
 
 Data jsou zpracována pomocí modelů a jsou reprezentována v instancích tříd modelů. Každá třída zároveň obsahuje své specifické metody pro práci s daty.
 
-## 13. Požadavky mimo rozsah projektu
+## 14. Požadavky mimo rozsah projektu
 
 Při vývoje aplikace mě napadly funkcionality, které bych rád realizoval v následujících verzích aplikace:
     * více skupin uživatelů [viz 6.](docs/README#L41)
@@ -187,7 +205,7 @@ Při vývoje aplikace mě napadly funkcionality, které bych rád realizoval v n
     * administrátorská část aplikace pro správu uživatelů
     * registrační formulář pro uživatele
 
-## 14. Nefunkční požadavky
+## 15. Nefunkční požadavky
 
 ### Zálohování
 
@@ -205,13 +223,13 @@ V této verzi aplikace nebylo zvažováno logování.
 
 Chybové stavy jsou řešeny výpisem chybové hlášky do uživatelského rozhraní. V případě kritického chybového stavu (selhání sql dotazu), je uživateli zobrazena chybová stránka.
 
-## 15. Vývojové a produkční prostředí
+## 16. Vývojové a produkční prostředí
 
 Pro účely vývoje aplikace bylo použito prostředí XAMPP. Po uplynutí zkouškového období bude aplikace nasazena do testovacího provozu mezi studenty Pražské konzervatoře.
 
 V případě ostrého provozu bude dobré zvážit vytvoření separátního serveru pro účely testování.
 
-## 15. Zajímavosti v kódu
+## 17. Zajímavosti v kódu
 
 Pro účely hodnocení semestrální práce jsem zařadil na závěr tuto kategorii.
 
@@ -220,5 +238,11 @@ Pro účely hodnocení semestrální práce jsem zařadil na závěr tuto katego
 Nerealizována
 
 ### Zajímavost v CSS
-* Animace
+* Animace chybových hlášek
+* Animace dialogu
+
+### Zajímavost v PHP
+* Aplikace je z větší části v OOP
+* Validace formulářových polí probíhá ve mé vlastní knihovně
+* Pro zobrazení rozsáhlého statického obsahu používá knihovnu Parsedown pro převodu souborů ve formátu Markdownu na html.
         
