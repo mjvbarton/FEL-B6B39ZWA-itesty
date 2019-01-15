@@ -36,7 +36,7 @@ V současné fázi aplikace nepočítá s instalací na vícero serverech.
 
 ## 5. Uživatelská příručka
 
-Uživatelskou příručku naleznete [zde](https://itesty.mjvbarton.cz)
+Uživatelskou příručku naleznete [zde](https://itesty.mjvbarton.cz/help)
 
 ## 6. Souhrn použití aplikace
 
@@ -250,4 +250,17 @@ Nerealizována
 * Aplikace je z větší části v OOP
 * Validace formulářových polí probíhá ve mé vlastní knihovně
 * Pro zobrazení rozsáhlého statického obsahu používá knihovnu Parsedown pro převodu souborů ve formátu Markdownu na html.
-        
+
+## 18. Poznámky
+
+### Testování
+
+Pro účely testování je vytvořen uživatel **koko@itesty.mjvbarton.cz**. Heslo má k dispozici uživatel [Zdeněk Vlach](mailto:vlachzd1@fel.cvut.cz).
+
+V aplikaci je založen speciální předmět pro *Testování*, který obsahuje dva tématické okruhy *Večerníčky* a *Světový zeměpis*, které jsou určeny pro test stavů aplikace. V předmětu *Dějiny hudby* je založeno 12 tématických okruhů, z nichž jeden *Novoromantismus* obsahuje 6 otázek. Tento předmět a další zbylé předměty jsou nástinem kostry instance aplikace určené pro Pražskou konzervatoř.
+
+### Testovací provoz
+
+Po skončení zkouškového období bude aplikace uvedena do režimu testovacího provozu, kdy bude dána k testování vybrané skupině studentů konzervatoře. Tato verze aplikace bude pak převedena na adresu itesty1.mjvbarton.cz.
+
+
