@@ -30,7 +30,7 @@ Aplikace je umístěna na adrese [itesty.mjvbarton.cz](https://itesty.mjvbarton.
 
 Aplikaci rozbalíte z adresáře z gitu do kořenového adresáře webového prostoru. V adresáři *install* pak naleznete skripty v DDL, které importujete do databáze:
     * db-structure.sql
-    * db-sample-data.sql
+    * db-sampledata.sql
 
 V současné fázi aplikace nepočítá s instalací na vícero serverech. 
 
